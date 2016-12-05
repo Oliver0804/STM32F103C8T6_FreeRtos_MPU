@@ -1,0 +1,86 @@
+#ifndef __MAIN_H
+#define __MAIN_H
+#include "stm32f1xx_hal.h"
+
+//#include "stm32f0xx_hal.h"
+/*
+#define ZB_WKUP_PIN   GPIO_PIN_1
+#define ZB_WKUP_PORT  GPIOA
+#define ZB_WKUP_ON    HAL_GPIO_WritePin(ZB_WKUP_PORT,GPIO_PIN_1,GPIO_PIN_RESET)
+#define ZB_WKUP_OFF   HAL_GPIO_WritePin(ZB_WKUP_PORT,GPIO_PIN_1,GPIO_PIN_SET)
+
+
+#define SGN_LED_G_PIN   GPIO_PIN_15
+#define SGN_LED_G_PORT  GPIOB
+#define SGN_LED_G_ON    HAL_GPIO_WritePin(SGN_LED_G_PORT,SGN_LED_G_PIN,GPIO_PIN_RESET)
+#define SGN_LED_G_OFF   HAL_GPIO_WritePin(SGN_LED_G_PORT,SGN_LED_G_PIN,GPIO_PIN_SET)
+
+#define SGN_LED_R_PIN   GPIO_PIN_14
+#define SGN_LED_R_PORT  GPIOB
+#define SGN_LED_R_ON    HAL_GPIO_WritePin(SGN_LED_R_PORT,SGN_LED_R_PIN,GPIO_PIN_RESET)
+#define SGN_LED_R_OFF   HAL_GPIO_WritePin(SGN_LED_R_PORT,SGN_LED_R_PIN,GPIO_PIN_SET)
+//PS ек├ф
+#define PS_LED_G_PIN   GPIO_PIN_13
+#define PS_LED_G_PORT  GPIOB
+#define PS_LED_G_ON    HAL_GPIO_WritePin(PS_LED_G_PORT,PS_LED_G_PIN,GPIO_PIN_RESET)
+#define PS_LED_G_OFF   HAL_GPIO_WritePin(PS_LED_G_PORT,PS_LED_G_PIN,GPIO_PIN_SET)
+
+#define PS_LED_R_PIN   GPIO_PIN_12
+#define PS_LED_R_PORT  GPIOB
+#define PS_LED_R_ON    HAL_GPIO_WritePin(PS_LED_R_PORT,PS_LED_R_PIN,GPIO_PIN_RESET)
+#define PS_LED_R_OFF   HAL_GPIO_WritePin(PS_LED_R_PORT,PS_LED_R_PIN,GPIO_PIN_SET)
+
+#define DEBUG_LED_PIN   GPIO_PIN_4
+#define DEBUG_LED_PORT  GPIOA
+#define DEBUG_LED_ON    HAL_GPIO_WritePin(DEBUG_LED_PORT,DEBUG_LED_PIN,GPIO_PIN_RESET)
+#define DEBUG_LED_OFF   HAL_GPIO_WritePin(DEBUG_LED_PORT,DEBUG_LED_PIN,GPIO_PIN_SET)
+
+
+#define BLE_POW_PIN   GPIO_PIN_15
+#define BLE_POW_PORT  GPIOC
+#define BLE_POW_ON    HAL_GPIO_WritePin(BLE_POW_PORT,BLE_POW_PIN,GPIO_PIN_SET)
+#define BLE_POW_OFF   HAL_GPIO_WritePin(BLE_POW_PORT,BLE_POW_PIN,GPIO_PIN_RESET)
+
+#define BLE_RST_PIN   GPIO_PIN_8
+#define BLE_RST_PORT  GPIOA
+#define BLE_RST_ON    HAL_GPIO_WritePin(BLE_RST_PORT,BLE_RST_PIN,GPIO_PIN_SET)
+#define BLE_RST_OFF   HAL_GPIO_WritePin(BLE_RST_PORT,BLE_RST_PIN,GPIO_PIN_RESET)
+
+#define MPU_INT_PIN     GPIO_PIN_0
+#define MPU_INT_PORT    GPIOA
+#define MPU_INT_STATUS  HAL_GPIO_ReadPin(DEBUG_LED_PORT,DEBUG_LED_PIN)
+
+
+#define SIDE_SW_PIN     GPIO_PIN_4
+#define SIDE_SW_PORT    GPIOB
+#define SIDE_SW_STATUS  HAL_GPIO_ReadPin(SIDE_SW_PORT,SIDE_SW_PIN)
+
+#define CENT_SW_PIN     GPIO_PIN_5
+#define CENT_SW_PORT    GPIOB
+#define CENT_SW_STATUS  HAL_GPIO_ReadPin(CENT_SW_PORT,CENT_SW_PIN)
+
+#define ALL_RESET 			DEBUG_LED_OFF;SGN_LED_G_OFF;SGN_LED_R_OFF;PS_LED_G_OFF;PS_LED_R_OFF;
+#define ALL_SET 			DEBUG_LED_ON;SGN_LED_G_ON;SGN_LED_R_ON;PS_LED_G_ON;PS_LED_R_ON;
+
+
+*/
+#define UART_TX_SIZE  (uint8_t)255
+#define UART_RX_SIZE  (uint8_t)255
+
+
+struct UART_Interface_s
+{
+	UART_HandleTypeDef * uart_handle;
+	uint8_t TX_IsReady;
+	uint8_t TX_Buffer[UART_TX_SIZE];
+	uint16_t TX_leng;
+	uint8_t RX_Buffer[UART_RX_SIZE];
+  uint32_t RX_Idle;
+	uint8_t RX_TEMP[2];
+	volatile uint16_t RX_leng;
+  volatile uint16_t RX_IsNoNewRead;
+	void (*Sender)(uint8_t * SendData,volatile uint16_t DataLeng);
+};
+
+
+#endif

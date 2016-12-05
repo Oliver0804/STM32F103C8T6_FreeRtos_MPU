@@ -1,0 +1,1 @@
+stm32f103c8t6_freertos_mpu\startup_stm32f103xb.o: startup_stm32f103xb.s
