@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: £gVision V5.20.0.0
 Copyright (C) 2016 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: Oliver Oliver, TW, LIC=9WS63-AL8HY-EHX8P-MVF8Q-14VUJ-4CS6Y
+License Information: Oliver Microsoft, Microsoft, LIC=TIV9U-SL9W9-4SGY4-F0LZC-FH8EH-U9881
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.20
@@ -21,31 +21,118 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V2.0.18.0
 Dialog DLL:      TCM.DLL V1.14.9.0
  
 <h2>Project:</h2>
-C:\Users\August\Desktop\Codeing\STM32F103C8T6_FreeRtos_MPU\MDK-ARM\STM32F103C8T6_FreeRtos_MPU.uvprojx
-Project File Date:  12/02/2016
+C:\Users\Lenovo\Desktop\STM32F103C8T6_FreeRtos_MPU\MDK-ARM\STM32F103C8T6_FreeRtos_MPU.uvprojx
+Project File Date:  12/05/2016
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 2 (build 183)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'STM32F103C8T6_FreeRtos_MPU'
-"STM32F103C8T6_FreeRtos_MPU\STM32F103C8T6_FreeRtos_MPU.axf" - 0 Error(s), 0 Warning(s).
+compiling stm32f1xx_hal_tim_ex.c...
+compiling stm32f1xx_hal_cortex.c...
+compiling stm32f1xx_hal_gpio_ex.c...
+compiling stm32f1xx_hal_pwr.c...
+compiling stm32f1xx_hal_gpio.c...
+compiling stm32f1xx_hal_dma.c...
+compiling stm32f1xx_hal_flash.c...
+compiling stm32f1xx_hal_flash_ex.c...
+compiling stm32f1xx_hal.c...
+compiling stm32f1xx_hal_tim.c...
+compiling stm32f1xx_hal_uart.c...
+compiling stm32f1xx_hal_rcc_ex.c...
+compiling gpio.c...
+compiling usart.c...
+compiling stm32f1xx_hal_rcc.c...
+compiling stm32f1xx_it.c...
+compiling main.c...
+../Src/main.c(168): warning:  #177-D: function "UART1_Write_Array" was declared but never referenced
+  static void UART1_Write_Array(uint8_t * SendData,volatile uint16_t DataLeng)
+../Src/main.c(182): warning:  #177-D: function "UART2_Write_Array" was declared but never referenced
+  static void UART2_Write_Array(uint8_t * SendData,volatile uint16_t DataLeng)
+../Src/main.c: 2 warnings, 0 errors
+compiling freertos.c...
+../Src/freertos.c(414): warning:  #223-D: function "strcmp" declared implicitly
+  		if(strcmp(CMD_DEVICE,"BT")==0){
+../Src/freertos.c(422): warning:  #223-D: function "strlen" declared implicitly
+  				  SF=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(431): warning:  #223-D: function "strlen" declared implicitly
+  				  SW=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(440): warning:  #223-D: function "strlen" declared implicitly
+  				  SC=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(449): warning:  #223-D: function "strlen" declared implicitly
+  				  ST=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(458): warning:  #223-D: function "strlen" declared implicitly
+  				  SA=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(467): warning:  #223-D: function "strlen" declared implicitly
+  				  FS=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(476): warning:  #223-D: function "strlen" declared implicitly
+  				  FC=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(493): warning:  #223-D: function "strlen" declared implicitly
+  				  FC=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(505): warning:  #223-D: function "strlen" declared implicitly
+  				  SF=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(514): warning:  #223-D: function "strlen" declared implicitly
+  				  SW=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(523): warning:  #223-D: function "strlen" declared implicitly
+  				  SC=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(532): warning:  #223-D: function "strlen" declared implicitly
+  				  ST=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(541): warning:  #223-D: function "strlen" declared implicitly
+  				  SA=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(550): warning:  #223-D: function "strlen" declared implicitly
+  				  FS=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(559): warning:  #223-D: function "strlen" declared implicitly
+  				  FC=my_Atoi((uint8_t *)CMD_VAL_1,strlen(CMD_VAL_1));
+../Src/freertos.c(317): warning:  #177-D: variable "ERR_FLAG" was declared but never referenced
+  	uint8_t ERR_FLAG=0;
+../Src/freertos.c(318): warning:  #177-D: variable "TEMP" was declared but never referenced
+  	char TEMP[50]={0x00};
+../Src/freertos.c(323): warning:  #177-D: variable "INT_VAL_1" was declared but never referenced
+  	int INT_VAL_1=0;
+../Src/freertos.c(324): warning:  #550-D: variable "CMD_VAL_2" was set but never used
+    char CMD_VAL_2[9]={0x00};
+../Src/freertos.c: 20 warnings, 0 errors
+compiling stm32f1xx_hal_msp.c...
+compiling kalman.c...
+..\Drivers\kalman\kalman.c(136): warning:  #223-D: function "printf" declared implicitly
+          printf("\r\n X?è¦Vªº?Æ¾?:%4.2f ??",Angle_X_Final);
+..\Drivers\kalman\kalman.c(181): warning:  #223-D: function "printf" declared implicitly
+          printf("\r\n Y?è¦Vªº?Æ¾?:%4.2f ??",Angle_Y_Final);
+..\Drivers\kalman\kalman.c: 2 warnings, 0 errors
+compiling inv_mpu_dmp_motion_driver.c...
+compiling inv_mpu.c...
+assembling startup_stm32f103xb.s...
+compiling heap_4.c...
+compiling queue.c...
+compiling event_groups.c...
+compiling system_stm32f1xx.c...
+compiling timers.c...
+compiling i2c.c...
+compiling croutine.c...
+compiling cmsis_os.c...
+compiling tasks.c...
+compiling list.c...
+compiling port.c...
+linking...
+Program Size: Code=18916 RO-data=540 RW-data=192 ZI-data=5640  
+"STM32F103C8T6_FreeRtos_MPU\STM32F103C8T6_FreeRtos_MPU.axf" - 0 Error(s), 24 Warning(s).
 
 <h2>Software Packages used:</h2>
 
 Package Vendor: ARM
-                http://www.keil.com/pack/ARM.CMSIS.5.0.0-Beta4.pack
-                ARM::CMSIS:CORE:5.0.0
+                http://www.keil.com/pack/ARM.CMSIS.4.5.0.pack
+                ARM::CMSIS:CORE:4.3.0
                 CMSIS (Cortex Microcontroller Software Interface Standard)
-   * Component: CORE Version: 5.0.0
+   * Component: CORE Version: 4.3.0
 
 <h2>Collection of Component include folders:</h2>
-  C:\Users\August\Desktop\Codeing\STM32F103C8T6_FreeRtos_MPU\MDK-ARM\RTE
-  C:\Keil_v5\ARM\PACK\ARM\CMSIS\5.0.0-Beta4\CMSIS\Include
+  C:\Users\Lenovo\Desktop\STM32F103C8T6_FreeRtos_MPU\MDK-ARM\RTE
+  C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.5.0\CMSIS\Include
   C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\2.1.0\Device\Include
 
 <h2>Collection of Component Files used:</h2>
 
-   * Component: ARM::CMSIS:CORE:5.0.0
-Build Time Elapsed:  00:00:00
+   * Component: ARM::CMSIS:CORE:4.3.0
+Build Time Elapsed:  00:00:22
 </pre>
 </body>
 </html>
